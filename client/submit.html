@@ -1,0 +1,44 @@
+<template name="submit">
+<div class="well">
+<h1>Submitarino Sniperino</h1>
+<form class="form-horizontal">
+  <div class="form-group">
+    <label for="input-sniper" class="col-sm-2 control-label">Sniper</label>
+    <div class="col-sm-10 input-div">
+      <select id="input-sniper" selected="None">
+          <option>None</option>
+          {{#each players}}
+          {{> player_option}}
+          {{/each}}
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="input-victim" class="col-sm-2 control-label">Victim</label>
+    <div class="col-sm-10 input-div">
+      <select id="input-victim" selected="None">
+        <option>None</option>
+        {{#each players}}
+        {{> player_option}}
+        {{/each}}
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="input-comment" class="col-sm-2 control-label">Comment</label>
+    <div class="col-sm-10 input-div">
+      <textarea rows="3" id="input-comment"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <a class="btn btn-primary action-submit">Upload Image and Submit</a>
+    </div>
+  </div>
+</form>
+</div>
+</template>
+
+<template name="player_option">
+<option>{{name}}</option>
+</template>

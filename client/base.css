@@ -1,0 +1,9 @@
+.login-buttons {
+    padding-top: 15px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.navbar-toggle.collapsed {
+    background-color: #337ab7;
+}
