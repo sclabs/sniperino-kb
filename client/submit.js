@@ -13,6 +13,7 @@ Template.submit.events({
         },
         function(InkBlob){
           console.log(InkBlob.url)
+          Meteor.call('')
         },
         function(FPError){
            if(FPError && FPError.code !== 101)
