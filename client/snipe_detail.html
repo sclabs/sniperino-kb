@@ -1,0 +1,10 @@
+<template name="snipe_detail">
+<div class="well">
+<h1>{{sniper}} pwnd {{victim}}'s head for {{score}} points</h1>
+<img src="{{picture}}" alt="proof of sniperino" class="img-thumbnail">
+<p>Bonuses claimed: {{bonuses}}</p>
+{{#if invalidated}}
+<p class="text-danger">Kill invalidated {{formatDate invalidated_when}} by {{invalidated_by}}</p>
+{{/if}}
+</div>
+</template>

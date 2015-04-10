@@ -13,7 +13,16 @@ Template.submit.events({
         },
         function(InkBlob){
           console.log(InkBlob.url)
-          Meteor.call('')
+          Meteor.call('submitSnipe', $("#input-sniper").val(),
+                                     $("#input-victim").val(),
+                                     $("#input-comment").val(),
+                                     InkBlob.url,
+                                     $("#input-hair").is(":checked"),
+                                     $("#input-selfie").is(":checked"),
+                                     $("#input-selfie-stick").is(":checked"),
+                                     function(err, result) {
+                                       Router.go('snipe', {_id: result});
+                                     });
         },
         function(FPError){
            if(FPError && FPError.code !== 101)
