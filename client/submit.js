@@ -21,6 +21,7 @@ Template.submit.events({
                                      $("#input-selfie").is(":checked"),
                                      $("#input-selfie-stick").is(":checked"),
                                      function(err, result) {
+                                       console.log(result)
                                        Router.go('snipe', {_id: result});
                                      });
         },

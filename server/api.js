@@ -13,18 +13,20 @@ Meteor.methods({
       return;
     }
     console.log('inserting snipe');
-    Snipes.insert({user_id: this.userId,
-                   user: Meteor.users.findOne(this.userId).profile.name,
-                   sniper: sniper,
-                   victim: victim,
-                   picture: picture,
-                   text: text,
-                   hairBonus: hairBonus,
-                   selfieBonus: selfieBonus,
-                   stickBonus: stickBonus,
-                   comments: [],
-                   invalidated: false,
-                   timestamp: new Date()});
+    newSnipeId = Snipes.insert({user_id: this.userId,
+                                user: Meteor.users.findOne(this.userId).profile.name,
+                                sniper: sniper,
+                                victim: victim,
+                                picture: picture,
+                                text: text,
+                                hairBonus: hairBonus,
+                                selfieBonus: selfieBonus,
+                                stickBonus: stickBonus,
+                                comments: [],
+                                invalidated: false,
+                                timestamp: new Date()});
+                   
+    return newSnipeId;
   },
   
   invalidateSnipe: function(id) {
