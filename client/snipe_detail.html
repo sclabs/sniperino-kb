@@ -1,8 +1,11 @@
 <template name="snipe_detail">
 <h1>{{sniper}} pwnd {{victim}}'s head for {{points}}</h1>
 <img src="{{picture}}" alt="proof of sniperino" class="img-thumbnail snipe-picture">
-<p>Submitted {{formatDate timestamp}} by {{user}}</p>
+{{#if text}}
+<p>{{text}}</p>
+{{/if}}
 <p>Bonuses claimed: {{bonuses}}</p>
+<p>Kill submitted {{formatDate timestamp}} by {{user}}</p>
 {{#if invalidated}}
 <p class="text-danger">Kill invalidated {{formatDate invalidated_when}} by {{invalidated_by}}</p>
 {{/if}}
